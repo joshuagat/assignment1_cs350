@@ -116,7 +116,7 @@ int process_normal(char **tok, int bg)
     if(PID == 0){
         int PIDE = exec(*tok, tok);
         if(PIDE < 0){
-            printf(1, "Cannot run this command: %s", *tok);
+            printf(1, "Cannot run this command: %s\n", *tok);
         }
     }
     if(bg == 0){
@@ -210,7 +210,6 @@ int process_one_cmd(char* buf)
     /*Check buid-in exit command */
     if (exit_check(tok, num_tok))
     {
-        printf(1, "exit check call\n");
         /*some code here to wait till all children exit() before exit*/
 	// your implementation here
         while(wait() > 0){
