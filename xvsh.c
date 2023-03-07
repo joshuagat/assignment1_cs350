@@ -117,6 +117,7 @@ int process_normal(char **tok, int bg)
         int PIDE = exec(*tok, tok);
         if(PIDE < 0){
             printf(1, "Cannot run this command: %s\n", *tok);
+            exit();
         }
     }
     if(bg == 0){
